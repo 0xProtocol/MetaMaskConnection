@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <title>Web3 Metamask Login</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="index.js"></script>
 </head>
 <body class="flex w-screen h-screen justify-center items-center">
-<div class="flex-col space-y-2 justify-center items-center">
-    <button id='loginButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
-        Login with MetaMask
-    </button>
-    <p id='userWallet' class='text-lg text-gray-600 my-2'></p>
-</div>
+<button onclick="connectWallet()" class="mx-auto rounded-md p-2 bg-purple-500 text-white">Connect Wallet</button>
 
-
+<!--
 <script>
     window.userWalletAddress = null
     const loginButton = document.getElementById('loginButton')
     const userWallet = document.getElementById('userWallet')
+    const sendTransactionButton = document.getElementById('sendTransactionButton')
 
     /**
      * Check if MetaMask is installed on the browser
@@ -64,12 +61,16 @@
         }, 200)
     }
 
+    function signOutOfMetaMask() {
+
     window.addEventListener('DOMContentLoaded', () => {
         toggleButton()
+
     });
     // MetaMask Account for Test Issues (0 ETH)
     // PW: MetaMask
     //Secret Phrase Key: capital enact mouse bus supreme bulb frown fetch click palace token nose
 </script>
+-->
 </body>
 </html>

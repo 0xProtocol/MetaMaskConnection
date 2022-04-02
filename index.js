@@ -1,3 +1,17 @@
+window.onload = function () {
+    if (window.ethereum !== "undefined") {
+        this.ethereum.on("accountsChanged", handleAccountsChanged)
+
+    }
+}
+
+let accounts;
+
+const handleAccountsChanged = (a) => {
+    console.log("accounts changed")
+    accounts = a
+}
+
 async function connectWallet() {
     accounts = await window.ethereum.request({method: "eth_requestAccounts"}).catch((err) => {
         console.log(err.code)
@@ -9,12 +23,12 @@ async function checkBalance() {
     let balance = await window.ethereum.request({
         method: "eth_getBalance",
         params: [
-            "0xD585ef6eA45EeAe19b4454B1dB15B696FcbE94dD",
+            accounts[0],
             'latest'
 
         ]
     }).catch((err) => {
         console.log(err.code)
     })
-    console.log(parseInt(balance) / Math.pow(10,18))
+    console.log(parseInt(balance) / Math.pow(10, 18))
 }
